@@ -1,0 +1,41 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CropClassService WSDL service -->
+
+  <service name="CropClass" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://crop.yajith.com"/>
+      <parameter name="wsdlServiceElement" value="CropClassService"/>
+      <parameter name="schemaQualified" value="http://crop.yajith.com"/>
+      <parameter name="wsdlServicePort" value="CropClass"/>
+      <parameter name="className" value="com.yajith.crop.CropClassSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="CropClass"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getAge" qname="operNS:getAge" xmlns:operNS="http://crop.yajith.com" returnQName="retNS:getAgeReturn" xmlns:retNS="http://crop.yajith.com" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setAge" qname="operNS:setAge" xmlns:operNS="http://crop.yajith.com" soapAction="" >
+        <parameter qname="pns:ages" xmlns:pns="http://crop.yajith.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setMoisture" qname="operNS:setMoisture" xmlns:operNS="http://crop.yajith.com" soapAction="" >
+        <parameter qname="pns:moistures" xmlns:pns="http://crop.yajith.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMoisture" qname="operNS:getMoisture" xmlns:operNS="http://crop.yajith.com" returnQName="retNS:getMoistureReturn" xmlns:retNS="http://crop.yajith.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getName" qname="operNS:getName" xmlns:operNS="http://crop.yajith.com" returnQName="retNS:getNameReturn" xmlns:retNS="http://crop.yajith.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setName" qname="operNS:setName" xmlns:operNS="http://crop.yajith.com" soapAction="" >
+        <parameter qname="pns:names" xmlns:pns="http://crop.yajith.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="setName getAge getMoisture getName setMoisture setAge"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cloud Login</string>
+    <string name="com_auth0_client_id">eo7owMiBQb7QCWq6l3C8jkWvdD0OVMr8</string>
+    <string name="com_auth0_domain">dev-g598edkd.us.auth0.com</string>
+</resources>

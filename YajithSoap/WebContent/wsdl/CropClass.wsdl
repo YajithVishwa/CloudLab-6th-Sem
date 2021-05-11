@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://crop.yajith.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://crop.yajith.com" xmlns:intf="http://crop.yajith.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://crop.yajith.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getAge">
+    <complexType/>
+   </element>
+   <element name="getAgeResponse">
+    <complexType>
+     <sequence>
+      <element name="getAgeReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setAge">
+    <complexType>
+     <sequence>
+      <element name="ages" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setAgeResponse">
+    <complexType/>
+   </element>
+   <element name="setMoisture">
+    <complexType>
+     <sequence>
+      <element name="moistures" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMoistureResponse">
+    <complexType/>
+   </element>
+   <element name="getMoisture">
+    <complexType/>
+   </element>
+   <element name="getMoistureResponse">
+    <complexType>
+     <sequence>
+      <element name="getMoistureReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getName">
+    <complexType/>
+   </element>
+   <element name="getNameResponse">
+    <complexType>
+     <sequence>
+      <element name="getNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setName">
+    <complexType>
+     <sequence>
+      <element name="names" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNameResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAgeRequest">
+
+      <wsdl:part element="impl:getAge" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setAgeRequest">
+
+      <wsdl:part element="impl:setAge" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setAgeResponse">
+
+      <wsdl:part element="impl:setAgeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMoistureRequest">
+
+      <wsdl:part element="impl:setMoisture" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNameRequest">
+
+      <wsdl:part element="impl:getName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMoistureRequest">
+
+      <wsdl:part element="impl:getMoisture" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNameResponse">
+
+      <wsdl:part element="impl:getNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNameRequest">
+
+      <wsdl:part element="impl:setName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAgeResponse">
+
+      <wsdl:part element="impl:getAgeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNameResponse">
+
+      <wsdl:part element="impl:setNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMoistureResponse">
+
+      <wsdl:part element="impl:getMoistureResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMoistureResponse">
+
+      <wsdl:part element="impl:setMoistureResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CropClass">
+
+      <wsdl:operation name="getAge">
+
+         <wsdl:input message="impl:getAgeRequest" name="getAgeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAgeResponse" name="getAgeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setAge">
+
+         <wsdl:input message="impl:setAgeRequest" name="setAgeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setAgeResponse" name="setAgeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMoisture">
+
+         <wsdl:input message="impl:setMoistureRequest" name="setMoistureRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setMoistureResponse" name="setMoistureResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMoisture">
+
+         <wsdl:input message="impl:getMoistureRequest" name="getMoistureRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMoistureResponse" name="getMoistureResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getName">
+
+         <wsdl:input message="impl:getNameRequest" name="getNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNameResponse" name="getNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setName">
+
+         <wsdl:input message="impl:setNameRequest" name="setNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNameResponse" name="setNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CropClassSoapBinding" type="impl:CropClass">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAge">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAgeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAgeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setAge">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setAgeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setAgeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMoisture">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMoistureRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMoistureResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMoisture">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMoistureRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMoistureResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CropClassService">
+
+      <wsdl:port binding="impl:CropClassSoapBinding" name="CropClass">
+
+         <wsdlsoap:address location="http://localhost:8080/YajithSoap/services/CropClass"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
